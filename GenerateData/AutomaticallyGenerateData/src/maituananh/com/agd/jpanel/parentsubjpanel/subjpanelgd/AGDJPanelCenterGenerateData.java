@@ -1,13 +1,20 @@
 package maituananh.com.agd.jpanel.parentsubjpanel.subjpanelgd;
 
+<<<<<<< HEAD
 import maituananh.com.agd.actioncomponents.AGDActionButtonRemoveDynamic;
 import maituananh.com.agd.agdcomponents.*;
 import maituananh.com.agd.jpanel.parentsubjpanel.AGDJPanelGenerateData;
+=======
+import maituananh.com.agd.agdcomponents.*;
+>>>>>>> b446b90fe3173f9f2cb3fa96e24e4bd41b9a5f61
 import maituananh.com.agd.model.AGDModelDynamic;
 
 import javax.swing.*;
 import java.awt.*;
+<<<<<<< HEAD
 import java.util.ArrayList;
+=======
+>>>>>>> b446b90fe3173f9f2cb3fa96e24e4bd41b9a5f61
 
 public class AGDJPanelCenterGenerateData extends JPanel {
     private GridLayout mGridLayout;
@@ -16,6 +23,7 @@ public class AGDJPanelCenterGenerateData extends JPanel {
     private JPanel mJPanelLine;
     private JPanel mJPanelLineButtons;
     private AGDModelDynamic mAGDModelDynamicAtStart;
+<<<<<<< HEAD
     private AGDJPanelGenerateData mAGDJPanelGenerateData;
     private ArrayList<AGDModelDynamic> mAGDModelDynamicList;
 
@@ -25,6 +33,14 @@ public class AGDJPanelCenterGenerateData extends JPanel {
         createLayout();
         createComponents();
         setLayout(mAGDModelDynamicAtStart);
+=======
+
+    public AGDJPanelCenterGenerateData() {
+        setBackground();
+        createLayout();
+        createComponents();
+        setLayout();
+>>>>>>> b446b90fe3173f9f2cb3fa96e24e4bd41b9a5f61
         setSizeComponents(mAGDModelDynamicAtStart);
         addComponents(mAGDModelDynamicAtStart);
         setButtonAdd(mAGDModelDynamicAtStart);
@@ -41,6 +57,7 @@ public class AGDJPanelCenterGenerateData extends JPanel {
         this.setBackground(Color.black);
     }
 
+<<<<<<< HEAD
     private void setLayout(AGDModelDynamic inAGDModelDynamic) {
         inAGDModelDynamic.getJPanelLine().setLayout(mGridLayout);
     }
@@ -54,6 +71,19 @@ public class AGDJPanelCenterGenerateData extends JPanel {
         mAGDModelDynamicAtStart = new AGDModelDynamic(new JPanel(), new JPanel(), new JLabel(), new AGDJTextField(),
                 new AGDJCombobox(), new AGDJTextField(), new AGDJButton());
         mAGDModelDynamicList.add(mAGDModelDynamicAtStart);
+=======
+    private void setLayout() {
+        mAGDModelDynamicAtStart.getJPanelLine().setLayout(mGridLayout);
+    }
+
+    private void createLayout() {
+        mGridLayout = new GridLayout(1, 4, 5, 5);
+    }
+
+    private void createComponents() {
+        mAGDModelDynamicAtStart = new AGDModelDynamic(new JPanel(), new JPanel(), new JLabel(), new AGDJTextField(),
+                new AGDJCombobox(), new AGDJTextField(), new AGDJButton());
+>>>>>>> b446b90fe3173f9f2cb3fa96e24e4bd41b9a5f61
     }
 
     private void addComponents(AGDModelDynamic inAGDModelDynamic) {
@@ -68,11 +98,19 @@ public class AGDJPanelCenterGenerateData extends JPanel {
     }
 
     private void setSizeComponents(AGDModelDynamic inAGDModelDynamic) {
+<<<<<<< HEAD
         inAGDModelDynamic.getAgdJTextFieldColumnName().setPreferredSize(new Dimension(155, 30));
         inAGDModelDynamic.getAgdJComboboxDataType().setPreferredSize(new Dimension(155, 30));
         inAGDModelDynamic.getAgdJTextFieldCharacterLength().setPreferredSize(new Dimension(155, 30));
         inAGDModelDynamic.getAgdJButton().getButtonAdd().setPreferredSize(new Dimension(30, 22));
         inAGDModelDynamic.getAgdJButton().getButtonRemove().setPreferredSize(new Dimension(30, 22));
+=======
+        inAGDModelDynamic.getAgdJTextFieldColumnName().setPreferredSize(new Dimension(165, 30));
+        inAGDModelDynamic.getAgdJComboboxDataType().setPreferredSize(new Dimension(165, 30));
+        inAGDModelDynamic.getAgdJTextFieldCharacterLength().setPreferredSize(new Dimension(165, 30));
+        inAGDModelDynamic.getAgdJButton().getButtonAdd().setPreferredSize(new Dimension(30, 30));
+        inAGDModelDynamic.getAgdJButton().getButtonRemove().setPreferredSize(new Dimension(30, 30));
+>>>>>>> b446b90fe3173f9f2cb3fa96e24e4bd41b9a5f61
         inAGDModelDynamic.getJLabelEmpty().setPreferredSize(new Dimension(18, 0));
     }
 
@@ -109,6 +147,7 @@ public class AGDJPanelCenterGenerateData extends JPanel {
     }
 
     public void createPanelLine() {
+<<<<<<< HEAD
         AGDModelDynamic aGDModelDynamicAtClick = setUpNewJPanelLine();
         aGDModelDynamicAtClick.getAgdJButton().getButtonRemove().addActionListener(
                 new AGDActionButtonRemoveDynamic(aGDModelDynamicAtClick, mAGDJPanelGenerateData, this));
@@ -127,5 +166,11 @@ public class AGDJPanelCenterGenerateData extends JPanel {
 
     public ArrayList<AGDModelDynamic> getAGDModelDynamicList() {
         return mAGDModelDynamicList;
+=======
+        AGDModelDynamic mAGDModelDynamicAtClick = new AGDModelDynamic(new JPanel(), new JPanel(), new JLabel(),
+                new AGDJTextField(), new AGDJCombobox(), new AGDJTextField(), new AGDJButton());
+        addComponents(mAGDModelDynamicAtClick);
+        setSizeComponents(mAGDModelDynamicAtClick);
+>>>>>>> b446b90fe3173f9f2cb3fa96e24e4bd41b9a5f61
     }
 }
