@@ -18,9 +18,11 @@ public class AGDActionButtonRemoveMain implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        agdjPanelGenerateData.getPanelCenterGenerateData().remove(
-                agdjPanelGenerateData.getPanelCenterGenerateData().getJPanelLine());
-        agdjPanelGenerateData.getPanelCenterGenerateData().getAGDModelDynamicList().remove(0);
-        mAGDUtilsCommon.updateUI(agdjPanelGenerateData);
+        if (agdjPanelGenerateData.getPanelCenterGenerateData().getAGDModelDynamicList().size() >= 2) {
+            agdjPanelGenerateData.getPanelCenterGenerateData().remove(
+                    agdjPanelGenerateData.getPanelCenterGenerateData().getJPanelLine());
+            agdjPanelGenerateData.getPanelCenterGenerateData().getAGDModelDynamicList().remove(0);
+            mAGDUtilsCommon.updateUI(agdjPanelGenerateData);
+        }
     }
 }

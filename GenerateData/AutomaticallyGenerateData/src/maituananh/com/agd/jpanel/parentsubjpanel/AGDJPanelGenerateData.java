@@ -35,17 +35,13 @@ public class AGDJPanelGenerateData extends JPanel {
 
     private void createComponents() {
         panelTopGenerateData = new AGDJPanelTopGenerateData();
-<<<<<<< HEAD
         panelCenterGenerateData = new AGDJPanelCenterGenerateData(this);
-=======
-        panelCenterGenerateData = new AGDJPanelCenterGenerateData();
->>>>>>> b446b90fe3173f9f2cb3fa96e24e4bd41b9a5f61
         panelBottomGenerateData = new AGDJPanelBottomGenerateData();
     }
 
     private void addComponents() {
         this.add(panelTopGenerateData.getTopPanel(), BorderLayout.NORTH);
-        this.add(panelCenterGenerateData.getCenterPanel(), BorderLayout.CENTER);
+        this.add(panelCenterGenerateData.getScroll(), BorderLayout.CENTER);
         this.add(panelBottomGenerateData.getBottomPanel(), BorderLayout.SOUTH);
     }
 

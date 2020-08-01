@@ -41,6 +41,6 @@ public class AGDJFrameMain extends JFrame{
     }
 
     private void setResizable() {
-        this.setResizable(false);
+        this.setResizable(true);
     }
 }

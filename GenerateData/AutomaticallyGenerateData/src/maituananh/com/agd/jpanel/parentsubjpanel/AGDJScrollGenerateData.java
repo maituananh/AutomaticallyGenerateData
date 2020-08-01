@@ -7,9 +7,9 @@ public class AGDJScrollGenerateData {
 
     public AGDJScrollGenerateData() {
         AGDJPanelGenerateData agdJPanelGenerateData = new AGDJPanelGenerateData();
-        jScrollPane = new JScrollPane(agdJPanelGenerateData,
-                ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS,
-                ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        jScrollPane = new JScrollPane(agdJPanelGenerateData);
+        jScrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+        jScrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
     }
 
     public JScrollPane getJScrollPane() {
