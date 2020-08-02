@@ -5,54 +5,60 @@ import maituananh.com.agd.agdcomponents.*;
 import javax.swing.*;
 
 public class AGDModelDynamic {
-    private JPanel jPanelLine;
-    private JPanel jPanelLineButtons;
-    private JLabel labelEmpty; // create space between 2 button
-    private AGDJTextField agdJTextFieldColumnName;
-    private AGDJCombobox agdJComboboxDataType;
-    private AGDJTextField agdJTextFieldCharacterLength;
-    private AGDJButton agdjButton;
+    private JPanel mJPanelLine;
+    private JPanel mJPanelLineButtons;
+    private AGDJTextField mAGDJTextFieldColumnName;
+    private AGDJCombobox mAGDJComboboxDataType;
+    private AGDJTextField mAGDJTextFieldCharacterLength;
+    private AGDJButton mAGDJButton;
+    private JLabel mJLabelEmpty;
+    private JPanel mJPanelLineEmpty;
 
     public AGDModelDynamic() {
     }
 
-    public AGDModelDynamic(JPanel jPanelLine, JPanel jPanelLineButtons, JLabel labelEmpty,
-                           AGDJTextField agdJTextFieldColumnName, AGDJCombobox agdJComboboxDataType,
-                           AGDJTextField agdJTextFieldCharacterLength, AGDJButton agdjButton) {
-        this.jPanelLine = jPanelLine;
-        this.jPanelLineButtons = jPanelLineButtons;
-        this.labelEmpty = labelEmpty;
-        this.agdJTextFieldColumnName = agdJTextFieldColumnName;
-        this.agdJComboboxDataType = agdJComboboxDataType;
-        this.agdJTextFieldCharacterLength = agdJTextFieldCharacterLength;
-        this.agdjButton = agdjButton;
+    public AGDModelDynamic(JPanel inJPanelLine, JPanel inJPanelLineButtons, JPanel inJPanelLineEmpty,
+                           AGDJTextField inAGDJTextFieldColumnName, AGDJCombobox inAGDJComboboxDataType,
+                           AGDJTextField inAGDJTextFieldCharacterLength, AGDJButton inAGDJButton, JLabel inJLabelEmpty) {
+        this.mJPanelLine = inJPanelLine;
+        this.mJPanelLineButtons = inJPanelLineButtons;
+        this.mAGDJTextFieldColumnName = inAGDJTextFieldColumnName;
+        this.mAGDJComboboxDataType = inAGDJComboboxDataType;
+        this.mAGDJTextFieldCharacterLength = inAGDJTextFieldCharacterLength;
+        this.mAGDJButton = inAGDJButton;
+        this.mJLabelEmpty = inJLabelEmpty;
+        this.mJPanelLineEmpty = inJPanelLineEmpty;
     }
 
     public JPanel getJPanelLine() {
-        return jPanelLine;
+        return mJPanelLine;
     }
 
     public JPanel getJPanelLineButtons() {
-        return jPanelLineButtons;
-    }
-
-    public JLabel getJLabelEmpty() {
-        return labelEmpty;
+        return mJPanelLineButtons;
     }
 
     public AGDJTextField getAgdJTextFieldColumnName() {
-        return agdJTextFieldColumnName;
+        return mAGDJTextFieldColumnName;
     }
 
     public AGDJCombobox getAgdJComboboxDataType() {
-        return agdJComboboxDataType;
+        return mAGDJComboboxDataType;
     }
 
     public AGDJTextField getAgdJTextFieldCharacterLength() {
-        return agdJTextFieldCharacterLength;
+        return mAGDJTextFieldCharacterLength;
     }
 
     public AGDJButton getAgdJButton() {
-        return agdjButton;
+        return mAGDJButton;
+    }
+
+    public JLabel getJLabelEmpty() {
+        return mJLabelEmpty;
+    }
+
+    public JPanel getJPanelLineEmpty() {
+        return mJPanelLineEmpty;
     }
 }
