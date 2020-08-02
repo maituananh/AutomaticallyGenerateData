@@ -1,7 +1,5 @@
 package maituananh.com.agd.jpanel.parentsubjpanel;
 
-import maituananh.com.agd.actioncomponents.AGDActionButtonAddMain;
-import maituananh.com.agd.actioncomponents.AGDActionButtonRemoveMain;
 import maituananh.com.agd.jpanel.parentsubjpanel.subjpanelgd.AGDJPanelBottomGenerateData;
 import maituananh.com.agd.jpanel.parentsubjpanel.subjpanelgd.AGDJPanelCenterGenerateData;
 import maituananh.com.agd.jpanel.parentsubjpanel.subjpanelgd.AGDJPanelTopGenerateData;
@@ -22,7 +20,6 @@ public class AGDJPanelGenerateData extends JPanel {
         addComponents();
         setSizeComponents();
         setGap();
-        actionComponents();
     }
 
     private void createLayout() {
@@ -35,7 +32,7 @@ public class AGDJPanelGenerateData extends JPanel {
 
     private void createComponents() {
         panelTopGenerateData = new AGDJPanelTopGenerateData();
-        panelCenterGenerateData = new AGDJPanelCenterGenerateData(this);
+        panelCenterGenerateData = new AGDJPanelCenterGenerateData();
         panelBottomGenerateData = new AGDJPanelBottomGenerateData();
     }
 
@@ -60,10 +57,5 @@ public class AGDJPanelGenerateData extends JPanel {
 
     public JPanel getJPanelGenerateData() {
         return this;
-    }
-
-    private void actionComponents() {
-        panelCenterGenerateData.getButtonAdd().addActionListener(new AGDActionButtonAddMain(this));
-        panelCenterGenerateData.getButtonRemove().addActionListener(new AGDActionButtonRemoveMain(this));
     }
 }

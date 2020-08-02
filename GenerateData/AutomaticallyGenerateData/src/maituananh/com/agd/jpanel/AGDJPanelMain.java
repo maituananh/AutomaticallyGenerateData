@@ -1,7 +1,6 @@
 package maituananh.com.agd.jpanel;
 
 import maituananh.com.agd.jpanel.parentsubjpanel.AGDJPanelGenerateData;
-import maituananh.com.agd.jpanel.parentsubjpanel.AGDJScrollGenerateData;
 
 import javax.swing.*;
 import java.awt.*;
