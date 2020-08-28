@@ -13,7 +13,8 @@ public class AGDJButton {
     private JButton mButtonRemove;
 
     public AGDJButton() {
-        setUpIcon(AGDCommonStringFinal.PATH_ICON_ADD, AGDCommonStringFinal.PATH_ICON_REMOVE);
+        setUpIcon(AGDCommonStringFinal.PATH_FOLDER_IMAGE.concat(AGDCommonStringFinal.PATH_ICON_ADD),
+                AGDCommonStringFinal.PATH_FOLDER_IMAGE.concat(AGDCommonStringFinal.PATH_ICON_REMOVE));
     }
 
     private void setUpIcon(String inPathIcon1, String inPathIcon2) {

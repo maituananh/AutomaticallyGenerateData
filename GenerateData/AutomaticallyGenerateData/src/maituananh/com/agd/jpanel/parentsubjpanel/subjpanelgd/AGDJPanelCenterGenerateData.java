@@ -1,8 +1,10 @@
 package maituananh.com.agd.jpanel.parentsubjpanel.subjpanelgd;
 
-import maituananh.com.agd.actioncomponents.jbutton.AGDActionButtonAddMain;
-import maituananh.com.agd.actioncomponents.jbutton.AGDActionButtonRemoveMain;
+import maituananh.com.agd.actioncomponents.jbutton.AGDActionButton;
+import maituananh.com.agd.actioncomponents.jbuttonimpl.AGDActionButtonAddMain;
+import maituananh.com.agd.actioncomponents.jbuttonimpl.AGDActionButtonRemoveMain;
 import maituananh.com.agd.agdcomponents.*;
+import maituananh.com.agd.commonstatic.AGDCommonStringFinal;
 import maituananh.com.agd.model.AGDModelDynamic;
 
 import javax.swing.*;
@@ -14,6 +16,10 @@ public class AGDJPanelCenterGenerateData extends JPanel {
     private AGDModelDynamic mAGDModelDynamicAtStart;
     private ArrayList<AGDModelDynamic> mAGDModelDynamicList;
     private JScrollPane mJScrollPane;
+    private JPanel jPanelTableName;
+    private JLabel jLabelTableName;
+    private JTextField jTextFieldTableName;
+    private FlowLayout fLowLayoutTableName;
 
     public AGDJPanelCenterGenerateData() {
         createComponents();
@@ -26,11 +32,17 @@ public class AGDJPanelCenterGenerateData extends JPanel {
     }
 
     private void actionComponents(AGDModelDynamic inAGDModelDynamic) {
-        inAGDModelDynamic.getAgdJButton().getButtonAdd().addActionListener(new AGDActionButtonAddMain(this, inAGDModelDynamic));
-        inAGDModelDynamic.getAgdJButton().getButtonRemove().addActionListener(new AGDActionButtonRemoveMain(this, inAGDModelDynamic));
+        AGDActionButton actionButton = new AGDActionButtonAddMain(this, inAGDModelDynamic);
+        inAGDModelDynamic.getAgdJButton().getButtonAdd().addActionListener(actionButton);
+        actionButton = new AGDActionButtonRemoveMain(this, inAGDModelDynamic);
+        inAGDModelDynamic.getAgdJButton().getButtonRemove().addActionListener(actionButton);
     }
 
     private void setLayout(AGDModelDynamic inAGDModelDynamic) {
+        if (this.getAGDModelDynamicList().size() == 1) {
+            fLowLayoutTableName = new FlowLayout(FlowLayout.LEFT);
+            jPanelTableName.setLayout(fLowLayoutTableName);
+        }
         inAGDModelDynamic.getJPanelLine().setLayout(new BoxLayout(inAGDModelDynamic.getJPanelLine(), BoxLayout.X_AXIS));
     }
 
@@ -45,6 +57,9 @@ public class AGDJPanelCenterGenerateData extends JPanel {
         mAGDModelDynamicList.add(mAGDModelDynamicAtStart);
         mJScrollPane = new JScrollPane(this);
         mJPanelEmptyForFistRecord = new JPanel();
+        jPanelTableName = new JPanel();
+        jLabelTableName = new JLabel(AGDCommonStringFinal.TABLE_NAME);
+        jTextFieldTableName = new JTextField();
     }
 
     private void setScrollBarPolicy() {
@@ -58,13 +73,20 @@ public class AGDJPanelCenterGenerateData extends JPanel {
     }
 
     private void addComponents(AGDModelDynamic inAGDModelDynamic) {
-        inAGDModelDynamic.getJPanelLine().add(Box.createRigidArea(new Dimension(10,0)));
+        if (this.getAGDModelDynamicList().size() == 1) {
+            this.add(Box.createRigidArea(new Dimension(0, 7)));
+            fLowLayoutTableName.setHgap(10);
+            jPanelTableName.add(jLabelTableName);
+            jPanelTableName.add(jTextFieldTableName);
+            this.add(jPanelTableName);
+        }
+        inAGDModelDynamic.getJPanelLine().add(Box.createRigidArea(new Dimension(10, 0)));
         inAGDModelDynamic.getJPanelLine().add(inAGDModelDynamic.getAgdJTextFieldColumnName());
-        inAGDModelDynamic.getJPanelLine().add(Box.createRigidArea(new Dimension(10,0)));
+        inAGDModelDynamic.getJPanelLine().add(Box.createRigidArea(new Dimension(10, 0)));
         inAGDModelDynamic.getJPanelLine().add(inAGDModelDynamic.getAgdJComboboxDataType());
-        inAGDModelDynamic.getJPanelLine().add(Box.createRigidArea(new Dimension(10,0)));
+        inAGDModelDynamic.getJPanelLine().add(Box.createRigidArea(new Dimension(10, 0)));
         inAGDModelDynamic.getJPanelLine().add(inAGDModelDynamic.getAgdJTextFieldCharacterLength());
-        inAGDModelDynamic.getJPanelLine().add(Box.createRigidArea(new Dimension(10,0)));
+        inAGDModelDynamic.getJPanelLine().add(Box.createRigidArea(new Dimension(10, 0)));
         inAGDModelDynamic.getJPanelLineButtons().add(inAGDModelDynamic.getAgdJButton().getButtonAdd());
         inAGDModelDynamic.getJPanelLineButtons().add(inAGDModelDynamic.getJLabelEmpty());
         inAGDModelDynamic.getJLabelEmpty().setVisible(false);
@@ -78,6 +100,10 @@ public class AGDJPanelCenterGenerateData extends JPanel {
     }
 
     private void setSizeComponents(AGDModelDynamic inAGDModelDynamic) {
+        if (this.getAGDModelDynamicList().size() == 1) {
+            jPanelTableName.setMaximumSize(new Dimension(Short.MAX_VALUE, 35));
+            jTextFieldTableName.setPreferredSize(new Dimension(200, 30));
+        }
         this.mJPanelEmptyForFistRecord.setMaximumSize(new Dimension(Short.MAX_VALUE, 10));
         inAGDModelDynamic.getJPanelLineEmpty().setMaximumSize(new Dimension(Short.MAX_VALUE, 10));
         inAGDModelDynamic.getJPanelLine().setMaximumSize(new Dimension(Short.MAX_VALUE, 30));
